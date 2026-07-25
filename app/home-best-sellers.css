@@ -1,0 +1,309 @@
+.home-best-sellers {
+  --wardro-terracotta: #c83d1f;
+  --wardro-terracotta-dark: #a9341a;
+  --wardro-cream: #fff9f3;
+  --wardro-soft-peach: #fbede5;
+  --wardro-border: #e8d7c8;
+  --wardro-text: #171412;
+  --wardro-muted: #756a63;
+  color: var(--wardro-text);
+  background: var(--wardro-cream);
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.wardro-best-seller-container {
+  width: min(1440px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.selected-best-sellers {
+  padding: 68px 0 34px;
+}
+
+.best-seller-section-header {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.best-seller-section-header h2,
+.best-seller-section-header p {
+  font-family: inherit;
+}
+
+.best-seller-eyebrow {
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  color: var(--wardro-terracotta);
+}
+
+.best-seller-eyebrow span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.best-seller-eyebrow i {
+  width: 40px;
+  height: 2px;
+  margin-left: 14px;
+  background: var(--wardro-terracotta);
+  border-radius: 999px;
+}
+
+.best-seller-section-header h2 {
+  margin: 0;
+  color: var(--wardro-text);
+  font-size: clamp(38px, 3.2vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.best-seller-section-header p {
+  margin: 8px 0 0;
+  color: var(--wardro-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.best-seller-section-header > a {
+  margin-bottom: 25px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 16px;
+  color: var(--wardro-terracotta);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.best-seller-section-header > a > i {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--wardro-border);
+  border-radius: 50%;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.best-seller-section-header > a svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 200ms ease;
+}
+
+.best-seller-section-header > a:hover {
+  color: var(--wardro-terracotta-dark);
+}
+
+.best-seller-section-header > a:hover > i {
+  color: #fff;
+  background: var(--wardro-terracotta);
+  border-color: var(--wardro-terracotta);
+}
+
+.best-seller-section-header > a:hover svg {
+  transform: translateX(3px);
+}
+
+.best-seller-product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.best-seller-trust-strip {
+  min-height: 96px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  overflow: hidden;
+  background: #fffbf7;
+  border: 1px solid var(--wardro-border);
+  border-radius: 16px;
+  box-shadow: 0 7px 18px rgba(57, 35, 25, 0.045);
+}
+
+.best-seller-trust-item {
+  min-width: 0;
+  min-height: 68px;
+  padding: 20px 26px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.best-seller-trust-item + .best-seller-trust-item {
+  border-left: 1px solid var(--wardro-border);
+}
+
+.best-seller-trust-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  color: var(--wardro-terracotta);
+  background: var(--wardro-soft-peach);
+  border: 1px solid rgba(200, 61, 31, 0.2);
+  border-radius: 50%;
+}
+
+.best-seller-trust-icon svg {
+  width: 27px;
+  height: 27px;
+  stroke-width: 1.7;
+}
+
+.best-seller-trust-item b,
+.best-seller-trust-item small {
+  display: block;
+}
+
+.best-seller-trust-item b {
+  color: var(--wardro-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.best-seller-trust-item small {
+  margin-top: 5px;
+  color: var(--wardro-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.best-seller-section-header > a:focus-visible {
+  outline: 3px solid rgba(200, 61, 31, 0.3);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1400px) {
+  .wardro-best-seller-container {
+    width: calc(100% - 72px);
+  }
+}
+
+@media (max-width: 1300px) {
+  .best-seller-product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .best-seller-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .best-seller-trust-item {
+    padding-inline: 18px;
+    gap: 10px;
+  }
+
+  .best-seller-trust-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .best-seller-trust-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .best-seller-trust-item b {
+    font-size: 12px;
+  }
+
+  .best-seller-trust-item small {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wardro-best-seller-container {
+    width: calc(100% - 40px);
+  }
+
+  .selected-best-sellers {
+    padding-top: 56px;
+  }
+
+  .best-seller-section-header h2 {
+    font-size: 40px;
+  }
+
+  .best-seller-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .best-seller-trust-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .best-seller-trust-item:nth-child(3) {
+    border-left: 0;
+  }
+
+  .best-seller-trust-item:nth-child(n + 3) {
+    border-top: 1px solid var(--wardro-border);
+  }
+}
+
+@media (max-width: 560px) {
+  .best-seller-section-header {
+    display: block;
+  }
+
+  .best-seller-section-header > a {
+    margin: 20px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .wardro-best-seller-container {
+    width: calc(100% - 36px);
+  }
+
+  .selected-best-sellers {
+    padding-top: 48px;
+  }
+
+  .best-seller-section-header h2 {
+    font-size: 36px;
+  }
+
+  .best-seller-section-header p {
+    font-size: 14px;
+  }
+
+  .best-seller-product-grid,
+  .best-seller-trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .best-seller-trust-item + .best-seller-trust-item {
+    border-top: 1px solid var(--wardro-border);
+    border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .best-seller-section-header > a,
+  .best-seller-section-header > a > i,
+  .best-seller-section-header > a svg {
+    transition: none;
+  }
+}

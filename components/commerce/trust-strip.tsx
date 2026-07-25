@@ -1,0 +1,2 @@
+import {Boxes,ShieldCheck,Truck} from 'lucide-react';
+export function TrustStrip(){return <div className="trust-strip"><div><Boxes/><span><b>Smarter organisation</b><small>Layouts for every need</small></span></div><div><ShieldCheck/><span><b>Strong construction</b><small>Made for everyday use</small></span></div><div><ShieldCheck/><span><b>5-year warranty</b><small>Peace of mind from invoice date</small></span></div><div><Truck/><span><b>Partner installation</b><small>Free in eligible Bengaluru areas</small></span></div></div>}

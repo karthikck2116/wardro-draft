@@ -1,0 +1,1 @@
+import {describe,expect,it} from 'vitest'; import {checkServiceability} from '@/lib/delivery/check-serviceability'; describe('serviceability',()=>{it('accepts development Bengaluru PIN',()=>expect(checkServiceability('560001').serviceable).toBe(true));it('rejects unknown PIN',()=>expect(checkServiceability('110001').serviceable).toBe(false))});

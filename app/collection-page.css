@@ -1,0 +1,1098 @@
+.wardro-collection-page {
+  --collection-primary: #b33414;
+  --collection-primary-dark: #8f2911;
+  --collection-bg: #f6eee5;
+  --collection-cream: #fff9f3;
+  --collection-card: #fffdf9;
+  --collection-border: #e5d3c3;
+  --collection-text: #211814;
+  --collection-muted: #756861;
+  min-height: 100vh;
+  padding: 26px 0 48px;
+  color: var(--collection-text);
+  background:
+    radial-gradient(circle at 82% 9%, rgba(255, 255, 255, 0.72), transparent 31%),
+    var(--collection-bg);
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.wardro-collection-page h1,
+.wardro-collection-page h2,
+.wardro-collection-page h3,
+.wardro-collection-page p,
+.wardro-collection-page button,
+.wardro-collection-page input,
+.wardro-collection-page select {
+  font-family: inherit;
+}
+
+.wardro-collection-container {
+  width: min(1440px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.wardro-collection-hero {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  grid-template-columns: minmax(370px, 43%) minmax(0, 57%);
+  overflow: hidden;
+  background: linear-gradient(120deg, #fffaf4 0%, #fbf1e7 100%);
+  border: 1px solid var(--collection-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 34px rgba(70, 42, 29, 0.055);
+}
+
+.wardro-collection-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 34px 42px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wardro-collection-breadcrumbs {
+  position: absolute;
+  top: 28px;
+  left: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--collection-muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.wardro-collection-breadcrumbs a {
+  transition: color 180ms ease;
+}
+
+.wardro-collection-breadcrumbs a:hover {
+  color: var(--collection-primary);
+}
+
+.wardro-collection-eyebrow {
+  margin: 30px 0 0;
+  color: var(--collection-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.wardro-collection-hero h1 {
+  margin: 13px 0 0;
+  color: var(--collection-text);
+  font-size: clamp(44px, 4.2vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.wardro-collection-hero-copy > i {
+  width: 40px;
+  height: 3px;
+  margin: 20px 0 17px;
+  display: block;
+  background: var(--collection-primary);
+  border-radius: 999px;
+}
+
+.wardro-collection-description {
+  max-width: 440px;
+  margin: 0;
+  color: var(--collection-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.wardro-collection-hero-image {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  background: #e8ddd1;
+}
+
+.wardro-collection-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(251, 243, 235, 0.56) 0%, transparent 28%);
+  pointer-events: none;
+}
+
+.wardro-collection-hero-image img {
+  object-fit: cover;
+  object-position: 64% 52%;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wardro-collection-hero:hover .wardro-collection-hero-image img {
+  transform: scale(1.01);
+}
+
+.wardro-quick-filters {
+  position: relative;
+  z-index: 3;
+  min-height: 76px;
+  margin-top: 20px;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  background: rgba(255, 253, 249, 0.86);
+  border: 1px solid rgba(229, 211, 195, 0.9);
+  border-radius: 17px;
+  box-shadow: 0 8px 24px rgba(70, 42, 29, 0.045);
+  scrollbar-width: none;
+}
+
+.wardro-quick-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.wardro-quick-filters a {
+  min-height: 42px;
+  padding: 0 19px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--collection-text);
+  background: #fff;
+  border: 1px solid #eadbce;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 3px 9px rgba(64, 37, 26, 0.035);
+  transition: color 190ms ease, background-color 190ms ease,
+    border-color 190ms ease, transform 190ms ease, box-shadow 190ms ease;
+}
+
+.wardro-quick-filters a:hover {
+  color: var(--collection-primary);
+  border-color: rgba(179, 52, 20, 0.45);
+  box-shadow: 0 5px 13px rgba(64, 37, 26, 0.06);
+  transform: translateY(-1px);
+}
+
+.wardro-quick-filters a.is-active {
+  color: #fff;
+  background: var(--collection-primary);
+  border-color: var(--collection-primary);
+  box-shadow: 0 6px 15px rgba(179, 52, 20, 0.2);
+}
+
+.wardro-catalogue {
+  padding: 34px 0 40px;
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.wardro-mobile-filter-trigger,
+.wardro-filter-backdrop,
+.wardro-filter-close {
+  display: none;
+}
+
+.wardro-filter-layer {
+  display: contents;
+}
+
+.wardro-filters {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 122px);
+  padding: 22px 20px 20px;
+  overflow-y: auto;
+  background: rgba(255, 253, 249, 0.92);
+  border: 1px solid var(--collection-border);
+  border-radius: 17px;
+  box-shadow: 0 10px 28px rgba(62, 37, 26, 0.055);
+  scrollbar-width: thin;
+}
+
+.wardro-filter-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wardro-filter-header span {
+  display: block;
+  color: var(--collection-primary);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.wardro-filter-header h2 {
+  margin: 5px 0 0;
+  color: var(--collection-text);
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.wardro-filter-header > a {
+  margin-bottom: 2px;
+  color: var(--collection-primary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.wardro-filters fieldset {
+  margin: 19px 0 0;
+  padding: 19px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(229, 211, 195, 0.76);
+}
+
+.wardro-filters legend {
+  width: 100%;
+  margin: 0 0 11px;
+  padding: 0;
+  color: var(--collection-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.wardro-filters label {
+  position: relative;
+  min-height: 34px;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--collection-muted);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.wardro-filters input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.wardro-filter-check {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid #cdb9a8;
+  border-radius: 4px;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.wardro-filter-check::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+.wardro-filters input:checked + .wardro-filter-check {
+  background: var(--collection-primary);
+  border-color: var(--collection-primary);
+}
+
+.wardro-filters input:checked + .wardro-filter-check::after {
+  opacity: 1;
+}
+
+.wardro-filters input:focus-visible + .wardro-filter-check {
+  outline: 3px solid rgba(179, 52, 20, 0.2);
+  outline-offset: 2px;
+}
+
+.wardro-filter-colour {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(75, 54, 43, 0.22);
+  border-radius: 50%;
+}
+
+.wardro-filter-label {
+  min-width: 0;
+}
+
+.wardro-filters label small {
+  margin-left: auto;
+  color: #9b8c82;
+  font-size: 10px;
+}
+
+.wardro-reset-filters {
+  min-height: 44px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--collection-primary);
+  background: #fff7f1;
+  border: 1px solid rgba(179, 52, 20, 0.35);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 180ms ease, background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.wardro-reset-filters:hover {
+  color: #fff;
+  background: var(--collection-primary);
+  border-color: var(--collection-primary);
+}
+
+.wardro-results {
+  min-width: 0;
+}
+
+.wardro-result-header {
+  min-height: 64px;
+  margin-bottom: 20px;
+  padding: 10px 14px 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255, 253, 249, 0.78);
+  border: 1px solid rgba(229, 211, 195, 0.88);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(62, 37, 26, 0.035);
+}
+
+.wardro-result-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--collection-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wardro-result-header > div svg {
+  width: 19px;
+  height: 19px;
+  color: var(--collection-primary);
+}
+
+.wardro-result-header > div strong {
+  color: var(--collection-text);
+  font-weight: 700;
+}
+
+.wardro-result-header form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wardro-result-header label {
+  color: var(--collection-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.wardro-result-header select {
+  min-width: 178px;
+  height: 42px;
+  padding: 0 36px 0 13px;
+  color: var(--collection-text);
+  background: #fff;
+  border: 1px solid var(--collection-border);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.wardro-result-header select:focus-visible {
+  border-color: var(--collection-primary);
+  box-shadow: 0 0 0 3px rgba(179, 52, 20, 0.12);
+}
+
+.wardro-collection-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 18px;
+  align-items: stretch;
+}
+
+.wardro-quick-filters a:focus-visible,
+.wardro-reset-filters:focus-visible,
+.wardro-mobile-filter-trigger:focus-visible {
+  outline: 3px solid rgba(179, 52, 20, 0.25);
+  outline-offset: 3px;
+}
+
+.wardro-collection-empty {
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.wardro-collection-empty h2 {
+  color: var(--collection-text);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.wardro-collection-empty p {
+  color: var(--collection-muted);
+}
+
+.wardro-collection-empty a {
+  min-height: 44px;
+  margin-top: 14px;
+  padding-inline: 22px;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  background: var(--collection-primary);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wardro-collection-trust {
+  margin-top: 4px;
+}
+
+.wardro-collection-trust .trust-strip {
+  min-height: 112px;
+  overflow: hidden;
+  background: rgba(255, 253, 249, 0.9);
+  border: 1px solid var(--collection-border);
+  border-radius: 17px;
+  box-shadow: 0 10px 28px rgba(65, 39, 27, 0.055);
+}
+
+.wardro-collection-trust .trust-strip > div {
+  min-width: 0;
+  min-height: 110px;
+  padding: 20px 24px;
+  gap: 14px;
+}
+
+.wardro-collection-trust .trust-strip > div + div {
+  border-left-color: rgba(229, 211, 195, 0.85);
+}
+
+.wardro-collection-trust .trust-strip > div > svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  flex: 0 0 auto;
+  color: var(--collection-primary);
+  background: #faeae1;
+  border-radius: 50%;
+}
+
+.wardro-collection-trust .trust-strip b {
+  color: var(--collection-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.wardro-collection-trust .trust-strip small {
+  color: var(--collection-muted);
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1350px) {
+  .wardro-collection-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1200px) {
+  .wardro-catalogue {
+    grid-template-columns: 248px minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .wardro-collection-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 1080px) and (min-width: 901px) {
+  .wardro-collection-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .wardro-collection-container {
+    width: min(100% - 40px, 820px);
+  }
+
+  .wardro-catalogue {
+    display: block;
+  }
+
+  .wardro-mobile-filter-trigger {
+    position: sticky;
+    z-index: 19;
+    top: 78px;
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: #fff;
+    background: var(--collection-primary);
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 7px 18px rgba(106, 37, 17, 0.17);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .wardro-mobile-filter-trigger svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .wardro-filter-layer {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: none;
+  }
+
+  .wardro-filter-layer.is-open {
+    display: block;
+  }
+
+  .wardro-filter-backdrop {
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: rgba(28, 18, 14, 0.48);
+    border: 0;
+    backdrop-filter: blur(2px);
+  }
+
+  .wardro-filters {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(390px, 90vw);
+    max-height: none;
+    padding: 26px 22px 28px;
+    border: 0;
+    border-radius: 18px 0 0 18px;
+    box-shadow: -18px 0 42px rgba(24, 15, 11, 0.17);
+  }
+
+  .wardro-filter-header {
+    padding-right: 44px;
+  }
+
+  .wardro-filter-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    color: var(--collection-text);
+    background: #fff5ed;
+    border: 1px solid var(--collection-border);
+    border-radius: 50%;
+  }
+
+  .wardro-filter-close svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .wardro-result-header {
+    position: sticky;
+    z-index: 18;
+    top: 138px;
+    background: rgba(255, 253, 249, 0.96);
+    backdrop-filter: blur(10px);
+  }
+
+  .wardro-collection-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .wardro-collection-trust .trust-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wardro-collection-trust .trust-strip > div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .wardro-collection-trust .trust-strip > div:nth-child(n + 3) {
+    border-top: 1px solid var(--collection-border);
+  }
+}
+
+@media (max-width: 800px) {
+  .wardro-collection-page {
+    padding-top: 18px;
+  }
+
+  .wardro-collection-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .wardro-collection-hero-copy {
+    min-height: 300px;
+    padding: 32px 28px 34px;
+  }
+
+  .wardro-collection-breadcrumbs {
+    top: 24px;
+    left: 28px;
+  }
+
+  .wardro-collection-eyebrow {
+    margin-top: 30px;
+  }
+
+  .wardro-collection-hero h1 {
+    font-size: 48px;
+  }
+
+  .wardro-collection-hero-image {
+    min-height: 280px;
+  }
+
+  .wardro-collection-hero-image::after {
+    background: linear-gradient(180deg, rgba(251, 243, 235, 0.38), transparent 25%);
+  }
+
+  .wardro-quick-filters {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .wardro-collection-page {
+    padding-bottom: 34px;
+  }
+
+  .wardro-collection-container {
+    width: calc(100% - 36px);
+  }
+
+  .wardro-collection-hero {
+    border-radius: 16px;
+  }
+
+  .wardro-collection-hero-copy {
+    min-height: 286px;
+    padding-inline: 20px;
+  }
+
+  .wardro-collection-breadcrumbs {
+    left: 20px;
+    gap: 6px;
+    font-size: 9px;
+  }
+
+  .wardro-collection-eyebrow {
+    font-size: 9px;
+  }
+
+  .wardro-collection-hero h1 {
+    font-size: 40px;
+  }
+
+  .wardro-collection-description {
+    font-size: 12px;
+  }
+
+  .wardro-collection-hero-image {
+    min-height: 230px;
+  }
+
+  .wardro-quick-filters {
+    min-height: 66px;
+    margin-top: 14px;
+    padding: 9px;
+    border-radius: 14px;
+  }
+
+  .wardro-quick-filters a {
+    min-height: 39px;
+    padding-inline: 16px;
+    font-size: 11px;
+  }
+
+  .wardro-catalogue {
+    padding-top: 24px;
+  }
+
+  .wardro-result-header {
+    padding: 9px 10px 9px 13px;
+    gap: 10px;
+  }
+
+  .wardro-result-header > div {
+    font-size: 11px;
+  }
+
+  .wardro-result-header label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .wardro-result-header select {
+    min-width: 145px;
+    max-width: 160px;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .wardro-collection-product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .wardro-collection-trust .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .wardro-collection-trust .trust-strip > div {
+    min-height: 92px;
+  }
+
+  .wardro-collection-trust .trust-strip > div + div,
+  .wardro-collection-trust .trust-strip > div:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--collection-border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wardro-collection-hero-image img,
+  .wardro-quick-filters a,
+  .wardro-reset-filters {
+    transition: none;
+  }
+}
+
+/* Unified filter form */
+.wardro-filters--mobile,
+.wardro-filter-dialog-overlay,
+.wardro-filter-back,
+.wardro-filter-mobile-sort {
+  display: none;
+}
+
+.wardro-filter-form {
+  min-height: 100%;
+}
+
+.wardro-filter-clear {
+  margin: 0 0 2px auto;
+  padding: 4px 0;
+  color: var(--collection-primary);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wardro-filter-chip-group > div,
+.wardro-filter-colour-group > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wardro-filter-chip-group label {
+  min-height: 0;
+  margin: 0;
+}
+
+.wardro-filter-chip-group label input,
+.wardro-filter-colour-group label input,
+.wardro-filter-standard-group label input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.wardro-filter-chip-group label > span {
+  min-height: 38px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--collection-text);
+  background: #fff;
+  border: 1px solid var(--collection-border);
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.wardro-filter-chip-group input:checked + span {
+  color: var(--collection-primary);
+  background: #fff7f1;
+  border-color: var(--collection-primary);
+}
+
+.wardro-filter-colour-group label {
+  width: 34px;
+  min-height: 34px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.wardro-filter-colour-group .wardro-filter-colour {
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(72, 48, 35, 0.24);
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.wardro-filter-colour-group input:checked + .wardro-filter-colour {
+  outline-color: var(--collection-primary);
+}
+
+.wardro-filter-standard-group label {
+  display: flex;
+}
+
+.wardro-filter-price-group > input[type="range"] {
+  position: static;
+  width: 100%;
+  height: 20px;
+  margin: 2px 0 6px;
+  opacity: 1;
+  accent-color: var(--collection-primary);
+}
+
+.wardro-filter-price-group > input[type="hidden"] {
+  display: none;
+}
+
+.wardro-filter-price-group > div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--collection-muted);
+  font-size: 10px;
+}
+
+.wardro-filter-price-group strong {
+  color: var(--collection-text);
+  font-weight: 600;
+}
+
+.wardro-filter-actions {
+  margin-top: 22px;
+  display: grid;
+  gap: 9px;
+}
+
+.wardro-filter-actions button,
+.wardro-filter-actions a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wardro-filter-actions button {
+  color: #fff;
+  background: var(--collection-primary);
+  border: 1px solid var(--collection-primary);
+}
+
+.wardro-filter-actions a {
+  color: var(--collection-primary);
+  background: transparent;
+  border: 1px solid rgba(179, 52, 20, 0.34);
+}
+
+@media (max-width: 900px) {
+  .wardro-filters--desktop {
+    display: none;
+  }
+
+  .wardro-filter-dialog-overlay {
+    position: fixed;
+    z-index: 119;
+    inset: 0;
+    display: block;
+    background: rgba(28, 18, 14, 0.46);
+    backdrop-filter: blur(3px);
+    animation: wardro-filter-fade 180ms ease both;
+  }
+
+  .wardro-filters.wardro-filters--mobile {
+    position: fixed;
+    z-index: 120;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(420px, 94vw);
+    max-height: 100dvh;
+    padding: 24px 22px max(22px, env(safe-area-inset-bottom));
+    display: block;
+    overflow-y: auto;
+    background: #fffaf5;
+    border: 0;
+    border-radius: 18px 0 0 18px;
+    box-shadow: -18px 0 42px rgba(24, 15, 11, 0.17);
+    animation: wardro-filter-slide 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .wardro-filter-header {
+    position: sticky;
+    z-index: 2;
+    top: -24px;
+    min-height: 66px;
+    margin: -24px -22px 0;
+    padding: 18px 22px;
+    align-items: center;
+    background: rgba(255, 250, 245, 0.97);
+    border-bottom: 1px solid var(--collection-border);
+    backdrop-filter: blur(12px);
+  }
+
+  .wardro-filter-header > div {
+    margin-right: auto;
+  }
+
+  .wardro-filter-header > div > span {
+    display: none;
+  }
+
+  .wardro-filter-header h2 {
+    margin: 0;
+    font-size: 19px;
+  }
+
+  .wardro-filter-back {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    color: var(--collection-text);
+    background: transparent;
+    border: 0;
+  }
+
+  .wardro-filter-back svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .wardro-filter-close {
+    display: none;
+  }
+
+  .wardro-filter-mobile-sort {
+    display: block;
+  }
+
+  .wardro-filter-mobile-sort select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 13px;
+    color: var(--collection-text);
+    background: #fff;
+    border: 1px solid var(--collection-border);
+    border-radius: 7px;
+    font: inherit;
+    font-size: 12px;
+  }
+
+  .wardro-filter-actions {
+    position: sticky;
+    bottom: calc(-1 * max(22px, env(safe-area-inset-bottom)));
+    margin: 24px -22px calc(-1 * max(22px, env(safe-area-inset-bottom)));
+    padding: 12px 22px max(12px, env(safe-area-inset-bottom));
+    background: rgba(255, 250, 245, 0.97);
+    border-top: 1px solid var(--collection-border);
+    backdrop-filter: blur(12px);
+  }
+
+  .wardro-filter-actions button {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .wardro-filters.wardro-filters--mobile {
+    left: 0;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+@keyframes wardro-filter-slide {
+  from { opacity: 0; transform: translateX(26px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wardro-filter-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wardro-filter-dialog-overlay,
+  .wardro-filters.wardro-filters--mobile {
+    animation: none;
+  }
+}

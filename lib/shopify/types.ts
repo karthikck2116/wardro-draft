@@ -1,0 +1,1 @@
+export type ShopifyMoney={amount:string;currencyCode:string};export type ShopifyProduct={id:string;handle:string;title:string;description:string;featuredImage?:{url:string;altText?:string;width:number;height:number};priceRange:{minVariantPrice:ShopifyMoney}};

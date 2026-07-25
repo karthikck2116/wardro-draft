@@ -1,0 +1,1 @@
+import {PRODUCT_FRAGMENT} from './fragments'; export const PRODUCT_QUERY=`${PRODUCT_FRAGMENT} query Product($handle:String!){product(handle:$handle){...ProductFields}}`; export const COLLECTION_QUERY=`${PRODUCT_FRAGMENT} query Collection($handle:String!,$first:Int!){collection(handle:$handle){title products(first:$first){nodes{...ProductFields}}}}`;
