@@ -50,10 +50,10 @@ export function WardroGuideHero() {
           ))}
         </div>
       </div>
-      <div className="wardro-guide-hero-image" aria-hidden="true">
+      <div className="wardro-guide-hero-image">
         <Image
           src="/images/categories/four-door.png"
-          alt=""
+          alt="Walnut four-door Wardro wardrobe in a warm bedroom setting"
           fill
           sizes="(max-width: 768px) 100vw, 53vw"
         />

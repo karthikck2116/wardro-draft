@@ -1662,8 +1662,221 @@
   }
 }
 
+/* Mobile reassurance: one compact card with three icon-and-copy rows. */
+@media (max-width: 768px) {
+  .wardro-reassurance {
+    min-height: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    background: linear-gradient(145deg, #b33414 0%, #c63a1d 52%, #a82e13 100%);
+    border-radius: 14px;
+    box-shadow: none;
+  }
+
+  .wardro-reassurance-item {
+    min-height: 0;
+    padding: 13px 16px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+  }
+
+  .wardro-reassurance-item + .wardro-reassurance-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    border-left: 0;
+  }
+
+  .wardro-reassurance-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+    background: rgba(255, 250, 245, 0.97);
+  }
+
+  .wardro-reassurance-icon svg {
+    width: 23px;
+    height: 23px;
+    stroke-width: 1.8;
+  }
+
+  .wardro-reassurance h3 {
+    margin: 0;
+    font-size: clamp(13px, 3.45vw, 15px);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .wardro-reassurance p {
+    max-width: none;
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(11px, 2.85vw, 12px);
+    line-height: 1.45;
+  }
+
+  .wardro-reassurance-description-desktop {
+    display: none;
+  }
+
+  .wardro-reassurance-description-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 410px) {
+  .wardro-reassurance-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .wardro-reassurance-icon {
+    width: 46px;
+    height: 46px;
+  }
+}
+
 @media (min-width: 600px) and (max-width: 768px) {
   .wardro-quality-card:not(:nth-child(3)) {
     height: 270px;
+  }
+}
+
+/* Mobile Wardro Guide intro: image first, then a compact three-benefit story. */
+@media (max-width: 768px) {
+  .wardro-guide-hero {
+    min-height: 0;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    background: linear-gradient(145deg, #fffaf5 0%, #fdf5ed 100%);
+    border-radius: 16px;
+    box-shadow: 0 7px 22px rgba(65, 38, 26, 0.045);
+  }
+
+  .wardro-guide-hero-image {
+    order: -1;
+    width: 100%;
+    height: clamp(220px, 62vw, 360px);
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 13px;
+  }
+
+  .wardro-guide-hero-image::after {
+    display: none;
+    content: none;
+  }
+
+  .wardro-guide-hero-image img {
+    object-position: 50% center;
+  }
+
+  .wardro-guide-hero-copy {
+    min-height: 0;
+    padding: 22px 8px 8px;
+    display: block;
+  }
+
+  .wardro-guide-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.105em;
+    line-height: 1.35;
+  }
+
+  .wardro-guide-hero-copy h2 {
+    margin-top: 14px;
+    font-size: clamp(32px, 8.6vw, 40px);
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .wardro-guide-rule {
+    width: 34px;
+    height: 3px;
+    margin: 15px 0 14px;
+  }
+
+  .wardro-guide-description {
+    max-width: 620px;
+    color: #655b55;
+    font-size: clamp(12.5px, 3.25vw, 14px);
+    line-height: 1.62;
+  }
+
+  .wardro-guide-benefits {
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: initial;
+    grid-auto-columns: initial;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .wardro-guide-benefit {
+    min-width: 0;
+    padding: 0;
+    scroll-snap-align: none;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .wardro-guide-benefit-icon {
+    width: 44px;
+    height: 44px;
+    background: #fbece3;
+  }
+
+  .wardro-guide-benefit-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.9;
+  }
+
+  .wardro-guide-benefit h3 {
+    margin-top: 10px;
+    font-size: clamp(10px, 2.7vw, 11.5px);
+    line-height: 1.3;
+  }
+
+  .wardro-guide-benefit p {
+    margin-top: 5px;
+    font-size: clamp(9.5px, 2.55vw, 10.5px);
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 410px) {
+  .wardro-guide-hero {
+    padding: 12px;
+  }
+
+  .wardro-guide-hero-copy {
+    padding: 20px 6px 7px;
+  }
+
+  .wardro-guide-benefits {
+    gap: 6px;
+  }
+
+  .wardro-guide-benefit-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wardro-guide-benefit-icon svg {
+    width: 20px;
+    height: 20px;
   }
 }

@@ -34,7 +34,8 @@ for (const [width, height] of sizes) {
     ),
   );
   await page.addStyleTag({
-    content: "nextjs-portal{display:none!important}.announcement,.header{visibility:hidden!important}",
+    content:
+      "nextjs-portal{display:none!important}.announcement,.header,.mobile-bottom-nav{visibility:hidden!important}",
   });
 
   await page.locator(".home-wardro-guide").screenshot({

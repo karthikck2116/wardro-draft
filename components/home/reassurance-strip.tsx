@@ -4,6 +4,7 @@ import { DiscoveryRevealSection } from "@/components/home/discovery-reveal-secti
 type ReassuranceItem = {
   title: string;
   description: string;
+  mobileDescription?: string;
   icon: LucideIcon;
 };
 
@@ -17,6 +18,7 @@ const reassuranceItems: ReassuranceItem[] = [
     title: "Free Delivery & Installation",
     description:
       "Free delivery and partner installation in eligible Bengaluru areas",
+    mobileDescription: "Free delivery and partner installation",
     icon: Truck,
   },
   {
@@ -48,7 +50,12 @@ export function ReassuranceStrip() {
             </span>
             <div>
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <p className="wardro-reassurance-description-desktop">
+                {item.description}
+              </p>
+              <p className="wardro-reassurance-description-mobile">
+                {item.mobileDescription ?? item.description}
+              </p>
             </div>
           </div>
         );
