@@ -14,7 +14,7 @@ const qualityCards: QualityCardData[] = [
     image: qualityImages.wood,
     imageAlt: "Close-up of layered engineered wood boards with a walnut finish",
     icon: Layers3,
-    href: "/materials-and-quality#engineered-wood",
+    href: "/materials-and-quality",
   },
   {
     title: "Tested Hardware",
@@ -25,7 +25,7 @@ const qualityCards: QualityCardData[] = [
     image: qualityImages.hardware,
     imageAlt: "Close-up of a premium concealed wardrobe hinge",
     icon: ShieldCheck,
-    href: "/materials-and-quality#hardware",
+    href: "/materials-and-quality",
   },
   {
     title: "Precision Channels",
@@ -34,7 +34,7 @@ const qualityCards: QualityCardData[] = [
     image: qualityImages.channels,
     imageAlt: "Close-up of a precision drawer channel fitted into a wardrobe drawer",
     icon: Archive,
-    href: "/materials-and-quality#channels",
+    href: "/materials-and-quality",
   },
 ];
 
