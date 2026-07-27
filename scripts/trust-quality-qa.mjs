@@ -27,7 +27,8 @@ for (const [width, height] of sizes) {
     ),
   );
   await page.addStyleTag({
-    content: ".announcement,.header{visibility:hidden!important}",
+    content:
+      ".announcement,.header,.mobile-bottom-nav{visibility:hidden!important}",
   });
 
   await sections.screenshot({

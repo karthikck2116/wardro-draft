@@ -421,6 +421,10 @@
   line-height: 1.5;
 }
 
+.wardro-quality-card-description-mobile {
+  display: none !important;
+}
+
 .wardro-quality-card-arrow {
   position: absolute;
   right: 18px;

@@ -5,6 +5,7 @@ import { ArrowRight, type LucideIcon } from "lucide-react";
 export type QualityCardData = {
   title: string;
   description: string;
+  mobileDescription?: string;
   image: string;
   imageAlt: string;
   icon: LucideIcon;
@@ -40,7 +41,12 @@ export function QualityCard({ card, index }: QualityCardProps) {
       <span className="wardro-quality-card-content">
         <strong>{card.title}</strong>
         <i aria-hidden="true" />
-        <span>{card.description}</span>
+        <span className="wardro-quality-card-description-desktop">
+          {card.description}
+        </span>
+        <span className="wardro-quality-card-description-mobile">
+          {card.mobileDescription ?? card.description}
+        </span>
       </span>
       <ArrowRight className="wardro-quality-card-arrow" aria-hidden="true" />
     </Link>
