@@ -17,6 +17,7 @@ import "./shop-by-need-page.css";
 import "./cart-drawer.css";
 import "./wishlist-page.css";
 import "./mobile-experience.css";
+import "./navigation-menu.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CartProvider } from "@/components/cart/cart-context";

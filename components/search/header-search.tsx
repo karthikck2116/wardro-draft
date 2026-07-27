@@ -21,6 +21,11 @@ type HeaderSearchProps = {
   triggerRef: RefObject<HTMLButtonElement | null>;
 };
 
+const searchResultCache = new Map<
+  string,
+  ReturnType<typeof getHeaderSearchResults>
+>();
+
 function trackSearch(event: string, payload: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
   window.dispatchEvent(
@@ -41,7 +46,6 @@ export function HeaderSearch({
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const wasOpenRef = useRef(false);
-  const cacheRef = useRef(new Map<string, ReturnType<typeof getHeaderSearchResults>>());
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -122,33 +126,28 @@ export function HeaderSearch({
   }, [closeSearch, open, triggerRef]);
 
   useEffect(() => {
-    closeSearch();
-    setQuery("");
-    setDebouncedQuery("");
-  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+    const frame = window.requestAnimationFrame(closeSearch);
+    return () => window.cancelAnimationFrame(frame);
+  }, [closeSearch, pathname]);
 
   const results = useMemo(() => {
     const key = debouncedQuery.trim().toLowerCase();
     if (!key) return getHeaderSearchResults("", products, guideArticles);
-    const cached = cacheRef.current.get(key);
+    const cached = searchResultCache.get(key);
     if (cached) return cached;
     const next = getHeaderSearchResults(debouncedQuery, products, guideArticles);
-    cacheRef.current.set(key, next);
+    searchResultCache.set(key, next);
     return next;
   }, [debouncedQuery]);
 
   const loading =
     Boolean(query.trim()) && query.trim() !== debouncedQuery.trim();
 
-  useEffect(() => {
-    setActiveId(null);
-  }, [query, results]);
-
-  const setSearchQuery = useCallback((value: string) => {
+  const setSearchQuery = (value: string) => {
     setQuery(value);
     setActiveId(null);
     window.requestAnimationFrame(() => inputRef.current?.focus());
-  }, []);
+  };
 
   const submitFallbackSearch = useCallback(() => {
     const trimmed = query.trim();
@@ -234,7 +233,10 @@ export function HeaderSearch({
           aria-controls="wardro-header-search-results"
           aria-expanded="true"
           aria-activedescendant={activeId ?? undefined}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            setQuery(event.target.value);
+            setActiveId(null);
+          }}
           onKeyDown={handleKeyDown}
         />
         <button
@@ -272,13 +274,16 @@ export function HeaderSearch({
           activeId={activeId}
           onActiveChange={setActiveId}
           onSearch={setSearchQuery}
-          onSelect={(kind, value) =>
+          onSelect={(kind, value) => {
             trackSearch("search_result_selected", {
               query: query.trim(),
               resultKind: kind,
               resultValue: value,
-            })
-          }
+            });
+            if (kind !== "popular_search" && kind !== "suggestion") {
+              closeSearch();
+            }
+          }}
         />
       </div>
     </div>

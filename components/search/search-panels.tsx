@@ -259,7 +259,6 @@ export function DiscoverySearchPanel({
 
 export function LiveSearchPanel({
   query,
-  products,
   results,
   loading,
   activeId,
