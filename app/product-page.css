@@ -925,6 +925,14 @@
   color: var(--pdp-terracotta);
 }
 
+.pdp-trust-row b {
+  font: inherit;
+}
+
+.pdp-trust-label-mobile {
+  display: none;
+}
+
 .pdp-customisation-notice {
   margin: 7px 0 0;
   padding: 7px 9px;
@@ -1275,6 +1283,10 @@
   font-size: 11px;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.pdp-material-description-mobile {
+  display: none;
 }
 
 .pdp-related {

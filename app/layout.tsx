@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./header-hero.css";
+import "./inline-search.css";
 import "./home-discovery.css";
 import "./home-best-sellers.css";
 import "./home-trust-quality.css";

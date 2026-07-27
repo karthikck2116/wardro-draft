@@ -10,8 +10,9 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/components/cart/cart-context";
+import { HeaderSearch } from "@/components/search/header-search";
 import { AnnouncementBar } from "./announcement-bar";
 import { HeaderLogo } from "./logo";
 import { MobileNavDrawer } from "./mobile-nav-drawer";
@@ -21,6 +22,8 @@ export function SiteHeader() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchTriggerRef = useRef<HTMLButtonElement>(null);
   const { count, setDrawer } = useCart();
   const productPage = pathname.startsWith("/products/");
 
@@ -34,7 +37,11 @@ export function SiteHeader() {
   return (
     <>
       <AnnouncementBar />
-      <header className={compact ? "header compact" : "header"}>
+      <header
+        className={`header${compact ? " compact" : ""}${
+          searchOpen ? " is-searching" : ""
+        }`}
+      >
         <div className="header-shell header-inner">
           <button
             className="mobile-icon"
@@ -92,9 +99,20 @@ export function SiteHeader() {
             </Link>
           </nav>
           <div className="header-actions">
-            <Link href="/search" aria-label="Search">
+            <button
+              ref={searchTriggerRef}
+              className="header-search-trigger"
+              type="button"
+              aria-label="Search"
+              aria-haspopup="listbox"
+              aria-expanded={searchOpen}
+              onClick={() => {
+                setOpen(false);
+                setSearchOpen(true);
+              }}
+            >
               <Search />
-            </Link>
+            </button>
             <Link className="desktop-only" href="/account" aria-label="Account">
               <UserRound />
             </Link>
@@ -107,13 +125,21 @@ export function SiteHeader() {
               <Heart />
             </Link>
             <button
-              onClick={() => setDrawer(true)}
+              onClick={() => {
+                setSearchOpen(false);
+                setDrawer(true);
+              }}
               aria-label={`Cart with ${count} items`}
             >
               <ShoppingCart />
               <b>{count}</b>
             </button>
           </div>
+          <HeaderSearch
+            open={searchOpen}
+            onOpenChange={setSearchOpen}
+            triggerRef={searchTriggerRef}
+          />
         </div>
       </header>
       <MobileNavDrawer open={open} onOpenChange={setOpen} />

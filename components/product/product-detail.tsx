@@ -303,7 +303,13 @@ export function ProductDetail({ product }: { product: Product }) {
             <ShieldCheck aria-hidden="true" /> 5-Year Warranty
           </span>
           <span>
-            <Wrench aria-hidden="true" /> Free Delivery &amp; Partner Installation
+            <Wrench aria-hidden="true" />
+            <b className="pdp-trust-label-desktop">
+              Free Delivery &amp; Partner Installation
+            </b>
+            <b className="pdp-trust-label-mobile">
+              Free Delivery &amp; Installation
+            </b>
           </span>
           <span>
             <CreditCard aria-hidden="true" /> Secure Payments
@@ -337,7 +343,8 @@ export function ProductDetail({ product }: { product: Product }) {
           disabled={!canPurchase}
           onClick={addSelectedProduct}
         >
-          Add
+          <ShoppingCart aria-hidden="true" />
+          Add to Cart
         </button>
         <button
           className="pdp-button"

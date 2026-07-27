@@ -29,7 +29,8 @@ for (const [width, height] of sizes.filter(
     return image?.complete && image.naturalWidth > 0;
   });
   await page.addStyleTag({
-    content: "*,*::before,*::after{animation:none!important;transition:none!important}",
+    content:
+      "nextjs-portal{display:none!important}*,*::before,*::after{animation:none!important;transition:none!important}",
   });
 
   const foldMetrics = await page.evaluate(() => {

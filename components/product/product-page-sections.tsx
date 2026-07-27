@@ -53,6 +53,8 @@ const materialCards = [
     title: "Engineered Wood",
     description:
       "Premium engineered wood construction with a warm, easy-care finish.",
+    mobileDescription:
+      "Engineered boards with a durable, easy-care finish.",
     image: "/images/materials/engineered-wood.png",
     imageAlt: "Close-up of layered engineered wood boards",
     icon: Layers3,
@@ -61,6 +63,8 @@ const materialCards = [
     title: "Tested Hardware",
     description:
       "Wardrobe hardware selected to support smooth, dependable everyday use.",
+    mobileDescription:
+      "Reliable hinges and fittings for smooth daily use.",
     image: "/images/materials/tested-hardware.png",
     imageAlt: "Close-up of wardrobe hinge hardware",
     icon: ShieldCheck,
@@ -69,6 +73,8 @@ const materialCards = [
     title: "Precision Channels",
     description:
       "Drawer-channel details are matched to the selected wardrobe configuration.",
+    mobileDescription:
+      "Smooth, dependable movement matched to the wardrobe.",
     image: "/images/materials/precision-channels.png",
     imageAlt: "Close-up of a drawer channel installed in a wardrobe",
     icon: PanelTopClose,
@@ -279,20 +285,39 @@ function ProductMaterials() {
         </Link>
       </div>
       <div className="pdp-material-grid">
-        {materialCards.map(({ title, description, image, imageAlt, icon: Icon }) => (
-          <article key={title}>
-            <div className="pdp-material-image">
-              <Image src={image} alt={imageAlt} fill sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="pdp-material-content">
-              <span className="pdp-material-icon">
-                <Icon aria-hidden="true" />
-              </span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </div>
-          </article>
-        ))}
+        {materialCards.map(
+          ({
+            title,
+            description,
+            mobileDescription,
+            image,
+            imageAlt,
+            icon: Icon,
+          }) => (
+            <article key={title}>
+              <div className="pdp-material-image">
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+              </div>
+              <div className="pdp-material-content">
+                <span className="pdp-material-icon">
+                  <Icon aria-hidden="true" />
+                </span>
+                <h3>{title}</h3>
+                <p className="pdp-material-description-desktop">
+                  {description}
+                </p>
+                <p className="pdp-material-description-mobile">
+                  {mobileDescription}
+                </p>
+              </div>
+            </article>
+          ),
+        )}
       </div>
     </section>
   );
