@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { NeedCategoryGrid } from "./need-category-grid";
-import { NeedFinderTools } from "./need-finder-tools";
-import { ShopByNeedHero } from "./shop-by-need-hero";
 import { ShopByNeedTrustStrip } from "./shop-by-need-trust-strip";
+import { ShopByNeedOverviewPage } from "./shop-by-need-overview";
 
 export function ShopByNeedPage() {
   return (
@@ -14,9 +12,7 @@ export function ShopByNeedPage() {
           <ChevronRight aria-hidden="true" />
           <span aria-current="page">Shop by Need</span>
         </nav>
-        <ShopByNeedHero />
-        <NeedCategoryGrid />
-        <NeedFinderTools />
+        <ShopByNeedOverviewPage />
         <ShopByNeedTrustStrip />
       </div>
     </div>

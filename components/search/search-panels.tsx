@@ -45,12 +45,12 @@ const popularSearches = [
 const needLinks = [
   {
     title: "Small Rooms",
-    href: "/collections/all-wardrobes?shopBy=room-size",
+    href: "/shop-by-need/room-size",
     icon: Ruler,
   },
   {
     title: "Family Storage",
-    href: "/collections/all-wardrobes?shopBy=family-size",
+    href: "/shop-by-need/family-size",
     icon: UsersRound,
   },
   {
@@ -60,12 +60,12 @@ const needLinks = [
   },
   {
     title: "By Budget",
-    href: "/collections/all-wardrobes?shopBy=budget",
+    href: "/shop-by-need/budget",
     icon: WalletCards,
   },
   {
     title: "Rental Friendly",
-    href: "/shop-by-need#rental-friendly",
+    href: "/shop-by-need/room-size?room=small",
     icon: House,
   },
 ];

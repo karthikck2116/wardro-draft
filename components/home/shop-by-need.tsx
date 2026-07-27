@@ -6,31 +6,31 @@ const needs: NeedCardData[] = [
   {
     title: "By Number of Doors",
     description: "1, 2, 3, 4 & more",
-    href: "/collections/all-wardrobes#door-count",
+    href: "/shop-by-need/number-of-doors",
     customIcon: "doors",
   },
   {
     title: "By Room Size",
     description: "Small, Medium, Large",
-    href: "/collections/all-wardrobes?shopBy=room-size",
+    href: "/shop-by-need/room-size",
     icon: Ruler,
   },
   {
     title: "By Family Size",
     description: "1–2, 3–4, 5+ Members",
-    href: "/collections/all-wardrobes?shopBy=family-size",
+    href: "/shop-by-need/family-size",
     icon: UsersRound,
   },
   {
     title: "By Storage Need",
     description: "Hanging, Shelves, More",
-    href: "/collections/all-wardrobes?shopBy=storage-need",
+    href: "/shop-by-need/storage-need",
     icon: Layers3,
   },
   {
     title: "By Budget",
     description: "Find your perfect fit",
-    href: "/collections/all-wardrobes?shopBy=budget",
+    href: "/shop-by-need/budget",
     icon: WalletCards,
   },
 ];

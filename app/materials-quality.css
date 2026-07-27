@@ -867,8 +867,8 @@
   }
 
   .mq-intro {
-    gap: 20px;
-    padding-bottom: 24px;
+    gap: 18px;
+    padding-bottom: 22px;
   }
 
   .mq-intro-copy h1 {
@@ -876,8 +876,54 @@
   }
 
   .mq-intro-copy > p:last-child {
-    font-size: 13.5px;
+    font-size: 14px;
     line-height: 1.65;
+  }
+
+  .mq-trust-card {
+    min-height: 0;
+    padding: 8px 5px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    border-radius: 14px;
+  }
+
+  .mq-trust-item {
+    min-height: 126px;
+    padding: 11px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .mq-trust-item + .mq-trust-item {
+    border-top: 0;
+    border-left: 1px solid var(--mq-border);
+  }
+
+  .mq-trust-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+  }
+
+  .mq-trust-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .mq-trust-item strong {
+    font-size: 10.5px;
+    line-height: 1.3;
+  }
+
+  .mq-trust-item small {
+    margin-top: 3px;
+    font-size: 9px;
+    line-height: 1.35;
   }
 
   .mq-quality-grid,
@@ -887,19 +933,19 @@
 
   .mq-quality-image,
   .mq-quality-card:last-child .mq-quality-image {
-    height: 205px;
+    height: 182px;
   }
 
   .mq-quality-content {
-    padding: 19px 18px 21px;
+    padding: 17px 17px 19px;
   }
 
   .mq-quality-content > p {
-    font-size: 12.5px;
+    font-size: 13px;
   }
 
   .mq-quality-content li {
-    font-size: 11.5px;
+    font-size: 12px;
   }
 
   .mq-process-panel,
@@ -950,7 +996,7 @@
   }
 
   .mq-process-step strong {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .mq-process-arrow {
@@ -1000,7 +1046,7 @@
   }
 
   .mq-spec-column li p {
-    font-size: 11.5px;
+    font-size: 12px;
   }
 
   .mq-indian-copy {
@@ -1043,8 +1089,24 @@
   }
 
   .mq-related-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    margin-inline: -18px;
+    padding: 2px 18px 10px;
+    grid-template-columns: none;
+    grid-auto-columns: minmax(260px, 78vw);
+    grid-auto-flow: column;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-padding-inline: 18px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .mq-related-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mq-related-grid > * {
+    scroll-snap-align: start;
   }
 }
 

@@ -198,19 +198,19 @@ export const shopByNeedSections: MegaMenuSection[] = [
       {
         title: "Small Rooms",
         description: "Smart storage for compact homes",
-        href: "/collections/all-wardrobes?need=small-spaces",
+        href: "/shop-by-need/room-size?room=small",
         icon: Ruler,
       },
       {
         title: "Medium Rooms",
         description: "Balanced storage and footprint",
-        href: "/collections/all-wardrobes?need=medium-rooms",
+        href: "/shop-by-need/room-size?room=medium",
         icon: DoorOpen,
       },
       {
         title: "Large Rooms",
         description: "More capacity for spacious bedrooms",
-        href: "/collections/all-wardrobes?need=large-rooms",
+        href: "/shop-by-need/room-size?room=large",
         icon: House,
       },
     ],
@@ -222,19 +222,19 @@ export const shopByNeedSections: MegaMenuSection[] = [
       {
         title: "Single Living",
         description: "Practical storage for one person",
-        href: "/collections/all-wardrobes?need=single-living",
+        href: "/shop-by-need/family-size?family=1-2",
         icon: HeartHandshake,
       },
       {
         title: "Couples",
         description: "Organised storage for two",
-        href: "/collections/all-wardrobes?need=newlyweds",
+        href: "/shop-by-need/family-size?family=1-2",
         icon: UsersRound,
       },
       {
         title: "Family Storage",
         description: "Spacious storage for every member",
-        href: "/collections/all-wardrobes?need=family-homes",
+        href: "/shop-by-need/family-size?family=3-4",
         icon: UsersRound,
       },
     ],
@@ -246,19 +246,19 @@ export const shopByNeedSections: MegaMenuSection[] = [
       {
         title: "Maximum Storage",
         description: "More space, better organisation",
-        href: "/collections/all-wardrobes?need=maximum-storage",
+        href: "/shop-by-need/storage-need?storage=combo",
         icon: Layers3,
       },
       {
         title: "By Budget",
         description: "Find wardrobes within your budget",
-        href: "/collections/all-wardrobes?shopBy=budget",
+        href: "/shop-by-need/budget",
         icon: WalletCards,
       },
       {
         title: "Rental Friendly",
         description: "Practical options for rented homes",
-        href: "/collections/all-wardrobes?need=rental-friendly",
+        href: "/shop-by-need/room-size?room=small",
         icon: House,
       },
       {
@@ -279,11 +279,36 @@ export const shopByNeedSections: MegaMenuSection[] = [
 ];
 
 export const mobileShopByNeedItems: NavigationItem[] = [
-  shopByNeedSections[0].items[0],
-  shopByNeedSections[1].items[2],
-  shopByNeedSections[2].items[0],
-  shopByNeedSections[2].items[1],
-  shopByNeedSections[2].items[2],
+  {
+    title: "By Number of Doors",
+    description: "Choose 1, 2, 3, 4 or more doors",
+    href: "/shop-by-need/number-of-doors",
+    icon: DoorOpen,
+  },
+  {
+    title: "By Room Size",
+    description: "Small, medium and large rooms",
+    href: "/shop-by-need/room-size",
+    icon: Ruler,
+  },
+  {
+    title: "By Family Size",
+    description: "Storage for every household",
+    href: "/shop-by-need/family-size",
+    icon: UsersRound,
+  },
+  {
+    title: "By Storage Need",
+    description: "Hanging, shelves and drawers",
+    href: "/shop-by-need/storage-need",
+    icon: Layers3,
+  },
+  {
+    title: "By Budget",
+    description: "Find your ideal price range",
+    href: "/shop-by-need/budget",
+    icon: WalletCards,
+  },
 ];
 
 export const navigationFeaturedPanel = {

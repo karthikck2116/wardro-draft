@@ -65,6 +65,18 @@ function scoreText(candidate: string, query: string) {
   if (candidate === query) return 120;
 
   const tokens = query.split(" ").filter(Boolean);
+  const meaningfulTokens = tokens.filter(
+    (token) =>
+      !["wardrobe", "wardrobes", "with", "for", "and", "the", "a"].includes(
+        token,
+      ),
+  );
+  if (
+    meaningfulTokens.length > 0 &&
+    !meaningfulTokens.every((token) => candidate.includes(token))
+  ) {
+    return 0;
+  }
   let score = candidate.includes(query) ? 70 : 0;
   const matchingTokens = tokens.filter((token) => candidate.includes(token));
 

@@ -22,20 +22,16 @@ const footerColumns: Array<{ title: string; links: FooterLink[] }> = [
   {
     title: "Shop by Need",
     links: [
-      { label: "Small Spaces", href: "/collections/all-wardrobes?need=small-spaces" },
-      { label: "Family Homes", href: "/collections/all-wardrobes?need=family-homes" },
-      { label: "Single Living", href: "/collections/all-wardrobes?need=single-living" },
+      { label: "By Number of Doors", href: "/shop-by-need/number-of-doors" },
+      { label: "By Room Size", href: "/shop-by-need/room-size" },
+      { label: "By Family Size", href: "/shop-by-need/family-size" },
       {
-        label: "Rental Friendly",
-        href: "/collections/all-wardrobes?need=rental-friendly",
+        label: "By Storage Need",
+        href: "/shop-by-need/storage-need",
       },
       {
-        label: "Maximum Storage",
-        href: "/collections/all-wardrobes?need=maximum-storage",
-      },
-      {
-        label: "Premium Choice",
-        href: "/collections/all-wardrobes?need=premium-choice",
+        label: "By Budget",
+        href: "/shop-by-need/budget",
       },
     ],
   },

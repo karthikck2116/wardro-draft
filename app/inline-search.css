@@ -528,13 +528,15 @@
   }
 
   .inline-search-panel {
-    position: fixed;
-    top: var(--inline-search-panel-top, 106px);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: auto;
+    position: absolute;
+    top: 100%;
+    right: auto;
+    bottom: auto;
+    left: calc((100vw - 100%) / -2);
+    width: 100vw;
+    height: calc(100dvh - var(--inline-search-panel-top, 106px));
     max-height: none;
+    background: #fffaf5;
     border-width: 1px 0 0;
     border-radius: 0;
     box-shadow: none;

@@ -1417,30 +1417,44 @@
   }
 
   .guide-page-benefits {
-    margin-inline: -2px;
-    padding-top: 30px;
-    grid-template-columns: none;
-    grid-auto-columns: minmax(142px, 48vw);
-    grid-auto-flow: column;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .guide-page-benefits::-webkit-scrollbar {
-    display: none;
+    margin-inline: -4px;
+    padding-top: 28px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+    gap: 7px;
+    overflow: visible;
   }
 
   .guide-page-benefits article {
-    padding: 12px 8px;
-    scroll-snap-align: start;
+    min-width: 0;
+    padding: 11px 4px;
     background: rgba(255, 255, 255, 0.58);
     border: 1px solid var(--guide-border);
     border-radius: 12px;
   }
 
+  .guide-page-benefits article > span {
+    width: 44px;
+    height: 44px;
+  }
+
+  .guide-page-benefits svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .guide-page-benefits h2 {
+    margin-top: 9px;
+    font-size: 10.5px;
+  }
+
+  .guide-page-benefits p {
+    font-size: 8.5px;
+    line-height: 1.4;
+  }
+
   .guide-page-hero-image {
-    min-height: 345px;
+    min-height: 300px;
   }
 
   .guide-tabs {
@@ -1466,7 +1480,7 @@
   .guide-grid-section,
   .guide-topics,
   .guide-faq {
-    padding-top: 42px;
+    padding-top: 38px;
   }
 
   .guide-page-section-heading h2 {
@@ -1477,9 +1491,54 @@
     padding-inline: 17px;
   }
 
+  .guide-page-card-grid {
+    margin-inline: -18px;
+    padding: 2px 18px 10px;
+    grid-template-columns: none;
+    grid-auto-columns: minmax(282px, 82vw);
+    grid-auto-flow: column;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-padding-inline: 18px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .guide-page-card-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-page-card {
+    height: 400px;
+    scroll-snap-align: start;
+  }
+
+  .guide-page-card-image {
+    height: 188px;
+  }
+
+  .guide-topic-grid {
+    margin-inline: -18px;
+    padding: 2px 18px 10px;
+    grid-template-columns: none;
+    grid-auto-columns: minmax(270px, 79vw);
+    grid-auto-flow: column;
+    gap: 13px;
+    overflow-x: auto;
+    scroll-padding-inline: 18px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .guide-topic-grid::-webkit-scrollbar {
+    display: none;
+  }
+
   .guide-topic-card {
+    min-height: 104px;
     grid-template-columns: 48px minmax(0, 1fr) 34px;
     padding-inline: 13px;
+    scroll-snap-align: start;
   }
 
   .guide-topic-icon {
@@ -1508,7 +1567,7 @@
   }
 
   .guide-measurement-image {
-    min-height: 285px;
+    min-height: 240px;
   }
 
   .guide-newsletter {

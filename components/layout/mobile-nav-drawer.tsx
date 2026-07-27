@@ -26,7 +26,7 @@ export function MobileNavDrawer({
   const wardrobesActive =
     pathname.startsWith("/collections") || pathname.startsWith("/products");
   const shopByNeedActive =
-    pathname === "/shop-by-need" || pathname === "/measure-your-space";
+    pathname.startsWith("/shop-by-need") || pathname === "/measure-your-space";
 
   const close = () => {
     setPanel("main");

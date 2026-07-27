@@ -46,6 +46,7 @@ export function HeaderSearch({
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const wasOpenRef = useRef(false);
+  const closeSearchRef = useRef<() => void>(() => undefined);
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -53,6 +54,10 @@ export function HeaderSearch({
   const closeSearch = useCallback(() => {
     onOpenChange(false);
   }, [onOpenChange]);
+
+  useEffect(() => {
+    closeSearchRef.current = closeSearch;
+  }, [closeSearch]);
 
   useEffect(() => {
     const onShortcut = (event: KeyboardEvent) => {
@@ -126,9 +131,9 @@ export function HeaderSearch({
   }, [closeSearch, open, triggerRef]);
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(closeSearch);
+    const frame = window.requestAnimationFrame(() => closeSearchRef.current());
     return () => window.cancelAnimationFrame(frame);
-  }, [closeSearch, pathname]);
+  }, [pathname]);
 
   const results = useMemo(() => {
     const key = debouncedQuery.trim().toLowerCase();

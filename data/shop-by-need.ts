@@ -88,7 +88,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/small-spaces.png",
     imageAlt: "A compact one-door wardrobe in a warm bedroom",
     icon: "small-spaces",
-    href: "/collections/all-wardrobes?need=small-spaces",
+    href: "/shop-by-need/room-size?room=small",
   },
   {
     slug: "family-homes",
@@ -98,7 +98,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/family-homes.png",
     imageAlt: "A wide four-door wardrobe suited to family storage",
     icon: "family",
-    href: "/collections/all-wardrobes?need=family-homes",
+    href: "/shop-by-need/family-size?family=3-4",
   },
   {
     slug: "single-living",
@@ -108,7 +108,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/single-living.png",
     imageAlt: "A practical two-door walnut wardrobe",
     icon: "single",
-    href: "/collections/all-wardrobes?need=single-living",
+    href: "/shop-by-need/family-size?family=1-2",
   },
   {
     slug: "newlyweds",
@@ -118,7 +118,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/newlyweds.png",
     imageAlt: "A warm oak wardrobe in a modern bedroom",
     icon: "newlyweds",
-    href: "/collections/all-wardrobes?need=newlyweds",
+    href: "/shop-by-need/family-size?family=1-2",
   },
   {
     slug: "rental-friendly",
@@ -128,7 +128,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/rental-friendly.png",
     imageAlt: "A three-door walnut wardrobe in a calm bedroom",
     icon: "rental",
-    href: "/collections/all-wardrobes?need=rental-friendly",
+    href: "/shop-by-need/room-size?room=small",
   },
   {
     slug: "maximum-storage",
@@ -138,7 +138,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/maximum-storage.png",
     imageAlt: "An open wardrobe with organised shelves, drawers and hanging space",
     icon: "maximum",
-    href: "/collections/all-wardrobes?need=maximum-storage",
+    href: "/shop-by-need/storage-need?storage=combo",
   },
   {
     slug: "modern-aesthetic",
@@ -148,7 +148,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/modern-aesthetic.png",
     imageAlt: "A modern three-door wardrobe with a warm wood finish",
     icon: "modern",
-    href: "/collections/all-wardrobes?need=modern-aesthetic",
+    href: "/shop-by-need/storage-need",
   },
   {
     slug: "premium-choice",
@@ -158,7 +158,7 @@ export const needCategories: NeedCategory[] = [
     image: "/images/shop-by-need/premium-choice.png",
     imageAlt: "A refined walnut and warm-white sliding wardrobe",
     icon: "premium",
-    href: "/collections/all-wardrobes?need=premium-choice",
+    href: "/shop-by-need/budget?range=25000-40000",
   },
 ];
 
@@ -174,7 +174,7 @@ export const needFinderTools: NeedFinderTool[] = [
     title: "Find by Room Size",
     description: "Shop wardrobes based on your room dimensions.",
     cta: "View size guide",
-    href: "/collections/all-wardrobes?shopBy=room-size",
+    href: "/shop-by-need/room-size",
     icon: "filters",
   },
   {

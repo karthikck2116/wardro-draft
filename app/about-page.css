@@ -751,28 +751,79 @@
 
 @media (max-width: 620px) {
   .about-trust {
-    grid-template-columns: 1fr;
-    padding-block: 5px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 6px;
   }
 
   .about-trust article,
   .about-trust article:nth-child(odd) {
-    min-height: 74px;
+    min-height: 112px;
+    padding: 12px 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
     border-top: 1px solid var(--about-border);
     border-left: 0;
   }
 
-  .about-trust article:first-child {
+  .about-trust article:nth-child(-n + 2) {
     border-top: 0;
   }
 
-  .about-values > div,
+  .about-trust article:nth-child(even) {
+    border-left: 1px solid var(--about-border);
+  }
+
+  .about-trust article > span {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+  }
+
+  .about-trust h2 {
+    font-size: 10.5px;
+  }
+
+  .about-trust p {
+    margin-top: 3px;
+    font-size: 8.5px;
+  }
+
+  .about-values > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
   .about-build ol {
     grid-template-columns: 1fr;
   }
 
   .about-values article {
-    min-height: 170px;
+    min-height: 158px;
+    padding: 17px 10px;
+  }
+
+  .about-values article > span {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-values svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .about-values h2 {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .about-values article p {
+    margin-top: 6px;
+    font-size: 9.5px;
   }
 
   .about-comparison-table-wrap {
@@ -933,7 +984,8 @@
   }
 
   .about-build article {
-    min-height: 170px;
+    min-height: 148px;
+    padding-block: 19px 16px;
   }
 
   .about-indian-homes h2 {
