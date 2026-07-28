@@ -8,25 +8,29 @@ import { DesignedForIndianHomes } from "./designed-for-indian-homes";
 import { HowWeBuild } from "./how-we-build";
 import { WhoWeAreSection } from "./who-we-are-section";
 import { WhyWardroComparison } from "./why-wardro-comparison";
+import { MobileAboutPage } from "./mobile-about-page";
 
 export function AboutPage() {
   return (
     <div className="about-page">
-      <div className="about-shell">
-        <nav className="about-breadcrumb" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <ChevronRight aria-hidden="true" />
-          <span aria-current="page">About Us</span>
-        </nav>
-        <AboutHero />
-        <AboutTrustStrip />
-        <WhoWeAreSection />
-        <BrandValues />
-        <WhyWardroComparison />
-        <HowWeBuild />
-        <DesignedForIndianHomes />
+      <div className="about-desktop-experience">
+        <div className="about-shell">
+          <nav className="about-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <ChevronRight aria-hidden="true" />
+            <span aria-current="page">About Us</span>
+          </nav>
+          <AboutHero />
+          <AboutTrustStrip />
+          <WhoWeAreSection />
+          <BrandValues />
+          <WhyWardroComparison />
+          <HowWeBuild />
+          <DesignedForIndianHomes />
+        </div>
+        <ReassuranceStrip />
       </div>
-      <ReassuranceStrip />
+      <MobileAboutPage />
     </div>
   );
 }

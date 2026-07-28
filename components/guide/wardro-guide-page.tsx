@@ -15,6 +15,7 @@ import { GuideHero } from "./guide-hero";
 import { GuideNewsletter } from "./guide-newsletter";
 import { GuideTopics } from "./guide-topics";
 import { MeasurementGuideCTA } from "./measurement-guide-cta";
+import { MobileWardroGuidePage } from "./mobile-wardro-guide-page";
 
 export function WardroGuidePage({
   activeCategory,
@@ -30,22 +31,25 @@ export function WardroGuidePage({
 
   return (
     <div className="guide-page">
-      <div className="guide-page-shell">
-        <nav className="guide-breadcrumb" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <ChevronRight aria-hidden="true" />
-          <span aria-current="page">Wardro Guide</span>
-        </nav>
-        <GuideHero />
-        <GuideCategoryTabs activeCategory={activeCategory} />
-        <FeaturedGuide article={featuredGuide} />
-        <GuideGrid articles={visibleArticles} />
-        <GuideTopics />
-        <MeasurementGuideCTA />
-        <GuideFAQ faqs={guideFaqs} />
-        <GuideNewsletter />
+      <div className="guide-desktop-experience">
+        <div className="guide-page-shell">
+          <nav className="guide-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <ChevronRight aria-hidden="true" />
+            <span aria-current="page">Wardro Guide</span>
+          </nav>
+          <GuideHero />
+          <GuideCategoryTabs activeCategory={activeCategory} />
+          <FeaturedGuide article={featuredGuide} />
+          <GuideGrid articles={visibleArticles} />
+          <GuideTopics />
+          <MeasurementGuideCTA />
+          <GuideFAQ faqs={guideFaqs} />
+          <GuideNewsletter />
+        </div>
+        <ReassuranceStrip />
       </div>
-      <ReassuranceStrip />
+      <MobileWardroGuidePage activeCategory={activeCategory} />
     </div>
   );
 }

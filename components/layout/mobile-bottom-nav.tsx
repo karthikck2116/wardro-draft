@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Grid2X2, Heart, Home, UserRound } from "lucide-react";
+import { BookOpenText, Grid2X2, Heart, Home, UserRound } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -18,10 +18,18 @@ const links = [
 export function MobileBottomNav() {
   const pathname = usePathname();
   if (pathname.startsWith("/products/") || pathname === "/cart") return null;
+  const isGuide = pathname.startsWith("/wardro-guide");
+  const visibleLinks = isGuide
+    ? links.map((link) =>
+        link.label === "Categories"
+          ? { label: "Guide", href: "/wardro-guide", Icon: BookOpenText }
+          : link,
+      )
+    : links;
 
   return (
     <nav className="mobile-bottom-nav" aria-label="Mobile quick navigation">
-      {links.map(({ label, href, Icon }) => {
+      {visibleLinks.map(({ label, href, Icon }) => {
         const active =
           href === "/"
             ? pathname === "/"
