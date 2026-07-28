@@ -24,6 +24,7 @@ import "./mobile-collection.css";
 import "./mobile-materials-quality.css";
 import "./mobile-wardro-guide.css";
 import "./mobile-about-page.css";
+import "./measure-space-page.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CartProvider } from "@/components/cart/cart-context";

@@ -777,90 +777,12 @@
     height: 17px;
   }
 
-  .mobile-guide-footer {
-    width: 100%;
-    margin-top: 13px;
-    padding: 19px 18px 17px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: 14px 18px;
-    color: #fff;
-    background: linear-gradient(120deg, #073b38, #042d2b);
-  }
-
-  .mobile-guide-footer > div:first-child > a {
-    width: 138px;
-    display: block;
-  }
-
-  .mobile-guide-footer > div:first-child img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-  }
-
-  .mobile-guide-footer > div:first-child p {
-    max-width: 205px;
-    margin-top: 8px;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 8px;
-    line-height: 1.5;
-  }
-
-  .mobile-guide-footer nav {
-    display: grid;
-    gap: 4px;
-  }
-
-  .mobile-guide-footer nav a {
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: rgba(255, 255, 255, 0.84);
-    font-size: 8px;
-    font-weight: 500;
-  }
-
-  .mobile-guide-footer nav svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  .mobile-guide-footer-socials {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 7px;
-  }
-
-  .mobile-guide-footer-socials a {
-    width: 30px;
-    height: 30px;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-  }
-
-  .mobile-guide-footer-socials svg {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    stroke-width: 1.7;
-  }
-
   .guide-mobile a:focus-visible,
   .guide-mobile button:focus-visible,
   .guide-mobile input:focus-visible,
   .mobile-guide-carousel:focus-visible {
     outline: 3px solid rgba(179, 52, 20, 0.32);
     outline-offset: 2px;
-  }
-
-  body:has(.guide-mobile) > main + .wardro-site-footer {
-    display: none;
   }
 
   body:has(.guide-mobile) {

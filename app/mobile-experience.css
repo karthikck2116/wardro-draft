@@ -360,12 +360,12 @@
   .wardro-footer-newsletter {
     order: 2;
     padding: 22px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1px solid var(--footer-border);
   }
 
   .wardro-footer-column {
     order: 3;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1px solid var(--footer-border);
   }
 
   .wardro-footer-column > h2 {
@@ -379,7 +379,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    color: #fff;
+    color: var(--footer-text);
     background: transparent;
     border: 0;
     font-size: 12px;
@@ -390,11 +390,16 @@
   .wardro-footer-accordion-trigger svg {
     width: 18px;
     height: 18px;
+    color: var(--footer-accent);
     transition: transform 180ms ease;
   }
 
   .wardro-footer-accordion-trigger[aria-expanded="true"] svg {
     transform: rotate(180deg);
+  }
+
+  .wardro-footer-accordion-trigger[aria-expanded="true"] {
+    color: var(--footer-accent);
   }
 
   .wardro-footer-column > div {

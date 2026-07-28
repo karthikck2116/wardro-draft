@@ -517,10 +517,6 @@
     font-weight: 600;
   }
 
-  body:has(.mq-mobile) .wardro-site-footer {
-    display: none;
-  }
-
   .mq-mobile button:focus-visible,
   .mq-mobile a:focus-visible,
   .mq-mobile input:focus-visible {
@@ -583,4 +579,3 @@
     transition: none;
   }
 }
-

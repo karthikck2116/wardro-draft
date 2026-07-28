@@ -5,17 +5,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
-  BookOpenText,
   ChevronRight,
   CircleHelp,
   ClipboardList,
-  Heart,
   Lightbulb,
   ListChecks,
-  Mail,
   Ruler,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import {
@@ -268,25 +264,6 @@ const topics = [
   },
 ];
 
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function YouTubeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="2.8" y="5.8" width="18.4" height="12.4" rx="3.2" />
-      <path d="m10 9 5 3-5 3V9Z" />
-    </svg>
-  );
-}
-
 export function MobileTopicShortcuts() {
   return (
     <section className="mobile-guide-topics" aria-labelledby="mobile-guide-topics-title">
@@ -334,7 +311,7 @@ export function MobileMeasurementGuideCta() {
             <BadgeCheck aria-hidden="true" /> Common mistakes to avoid
           </li>
         </ul>
-        <Link href="/wardro-guide/measure-your-space-before-buying">
+        <Link href="/measure-your-space">
           View Measurement Guide <ArrowRight aria-hidden="true" />
         </Link>
       </div>
@@ -362,46 +339,6 @@ export function MobileGuideHelpPanel() {
         <ChevronRight aria-hidden="true" />
       </Link>
     </section>
-  );
-}
-
-export function MobileGuideFooter() {
-  return (
-    <footer className="mobile-guide-footer">
-      <div>
-        <Link href="/" aria-label="Wardro home">
-          <Image
-            src="/images/brand/wardro-logo-terracotta.png"
-            alt="Wardro — More Space, Less Chaos"
-            width={836}
-            height={199}
-          />
-        </Link>
-        <p>Practical ideas for calmer, more organised homes.</p>
-      </div>
-      <nav aria-label="Wardro Guide footer links">
-        <Link href="/collections/all-wardrobes">
-          <BookOpenText aria-hidden="true" /> Wardrobes
-        </Link>
-        <Link href="/wishlist">
-          <Heart aria-hidden="true" /> Wishlist
-        </Link>
-        <Link href="/account">
-          <Sparkles aria-hidden="true" /> Account
-        </Link>
-      </nav>
-      <div className="mobile-guide-footer-socials" aria-label="Wardro social links">
-        <Link href="https://www.instagram.com" aria-label="Wardro on Instagram">
-          <InstagramIcon />
-        </Link>
-        <Link href="https://www.youtube.com" aria-label="Wardro on YouTube">
-          <YouTubeIcon />
-        </Link>
-        <Link href="/support/contact" aria-label="Contact Wardro">
-          <Mail aria-hidden="true" />
-        </Link>
-      </div>
-    </footer>
   );
 }
 
@@ -446,7 +383,6 @@ export function MobileWardroGuidePage({
         <MobileGuideNewsletter />
         <MobileGuideHelpPanel />
       </div>
-      <MobileGuideFooter />
     </div>
   );
 }

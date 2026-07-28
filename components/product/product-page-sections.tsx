@@ -7,6 +7,7 @@ import {
   House,
   Layers3,
   PanelTopClose,
+  Ruler,
   ShieldCheck,
   Sparkles,
   type LucideIcon,
@@ -251,7 +252,13 @@ function ProductSpecifications({ product }: { product: Product }) {
           <span>Product details</span>
           <h2 id="specifications-title">Dimensions &amp; specifications</h2>
         </div>
-        <p>Clear product information, grouped for quick comparison.</p>
+        <div className="pdp-specifications__guidance">
+          <p>Clear product information, grouped for quick comparison.</p>
+          <Link href="/measure-your-space">
+            <Ruler aria-hidden="true" />
+            Measure your space
+          </Link>
+        </div>
       </div>
       <div className="pdp-specification-grid">
         {groups.map((group) => (

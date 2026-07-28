@@ -1,3 +1,15 @@
+:root {
+  --footer-background: #f6eee5;
+  --footer-surface: #fff9f5;
+  --footer-heading: #b33414;
+  --footer-text: #2a1712;
+  --footer-muted: #6f5a50;
+  --footer-border: #e4d3c7;
+  --footer-input: #ffffff;
+  --footer-accent: #b33414;
+  --footer-accent-foreground: #ffffff;
+}
+
 .home-wardro-guide,
 .wardro-site-footer {
   --wardro-terracotta: #c83d1f;
@@ -8,10 +20,10 @@
   --wardro-border: #e7d6c7;
   --wardro-text: #111a19;
   --wardro-muted: #6f6761;
-  --wardro-footer: #073b38;
-  --wardro-footer-deep: #042f2d;
-  --wardro-footer-text: #f8f2ec;
-  --wardro-footer-muted: #d8d0c8;
+  --wardro-footer: var(--footer-background);
+  --wardro-footer-deep: var(--footer-surface);
+  --wardro-footer-text: var(--footer-text);
+  --wardro-footer-muted: var(--footer-muted);
   font-family: var(--font-montserrat), sans-serif;
 }
 
@@ -405,7 +417,7 @@
 
 .wardro-site-footer {
   color: var(--wardro-footer-text);
-  background: linear-gradient(120deg, #073b38 0%, #063431 55%, #042b29 100%);
+  background: var(--footer-background);
 }
 
 .wardro-footer-grid {
@@ -425,7 +437,7 @@
   width: 100%;
   height: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .wardro-footer-brand > p,
@@ -453,8 +465,9 @@
   height: 34px;
   display: grid;
   place-items: center;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--footer-accent);
+  background: var(--footer-surface);
+  border: 1px solid #dcc7b9;
   border-radius: 50%;
   transition: background-color 180ms ease, border-color 180ms ease,
     transform 180ms ease;
@@ -468,15 +481,16 @@
 }
 
 .wardro-footer-socials a:hover {
-  background: var(--wardro-terracotta);
-  border-color: var(--wardro-terracotta);
+  color: var(--footer-accent-foreground);
+  background: var(--footer-accent);
+  border-color: var(--footer-accent);
   transform: translateY(-1px);
 }
 
 .wardro-footer-column h2,
 .wardro-footer-newsletter h2 {
   margin: 0 0 18px;
-  color: #fff;
+  color: var(--footer-heading);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -491,7 +505,7 @@
 
 .wardro-footer-column a {
   width: fit-content;
-  color: var(--wardro-footer-muted);
+  color: var(--footer-text);
   font-size: 11px;
   font-weight: 400;
   line-height: 1.5;
@@ -499,7 +513,7 @@
 }
 
 .wardro-footer-column a:hover {
-  color: #fff;
+  color: var(--footer-accent);
   transform: translateX(3px);
 }
 
@@ -522,16 +536,17 @@
   width: 100%;
   height: 46px;
   padding: 0 16px;
-  color: var(--wardro-text);
-  background: #fff;
-  border: 0;
+  color: var(--footer-text);
+  background: var(--footer-input);
+  border: 1px solid #dcc7b9;
+  border-right: 0;
   border-radius: 6px 0 0 6px;
   font-size: 12px;
   outline: none;
 }
 
 .wardro-newsletter-form input::placeholder {
-  color: #8a817a;
+  color: #8b7770;
 }
 
 .wardro-newsletter-form button {
@@ -540,8 +555,8 @@
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  color: #fff;
-  background: var(--wardro-terracotta);
+  color: var(--footer-accent-foreground);
+  background: var(--footer-accent);
   border: 0;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
@@ -549,7 +564,7 @@
 }
 
 .wardro-newsletter-form button:hover {
-  background: var(--wardro-terracotta-dark);
+  background: #922a12;
 }
 
 .wardro-newsletter-form button svg {
@@ -562,7 +577,7 @@
 .wardro-footer-socials a:focus-visible,
 .wardro-footer-column a:focus-visible,
 .wardro-footer-bottom a:focus-visible {
-  outline: 3px solid rgba(248, 242, 236, 0.55);
+  outline: 3px solid rgba(179, 52, 20, 0.22);
   outline-offset: 2px;
 }
 
@@ -573,12 +588,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--footer-border);
 }
 
 .wardro-footer-bottom p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--footer-muted);
   font-size: 10px;
   line-height: 1.4;
 }
@@ -589,13 +604,13 @@
 }
 
 .wardro-footer-bottom a {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--footer-text);
   font-size: 10px;
   transition: color 180ms ease;
 }
 
 .wardro-footer-bottom a:hover {
-  color: #fff;
+  color: var(--footer-accent);
 }
 
 .wardro-site-footer.is-ready .wardro-footer-grid > *,
