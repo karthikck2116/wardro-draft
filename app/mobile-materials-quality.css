@@ -8,7 +8,7 @@
   }
 
   .mq-page {
-    padding: 10px 0 calc(92px + env(safe-area-inset-bottom));
+    padding: 10px 0 0;
     overflow: visible;
     background: #f6eee5;
   }
@@ -446,75 +446,6 @@
     color: var(--mq-terracotta);
     background: transparent;
     border: 0;
-  }
-
-  .mq-mobile-newsletter {
-    min-height: 122px;
-    padding: 13px;
-    display: grid;
-    grid-template-columns: 34px minmax(0, 1fr);
-    align-items: center;
-    gap: 7px 9px;
-    color: #fff;
-    background: linear-gradient(125deg, #073b38 0%, #042f2d 100%);
-    border-radius: 13px;
-  }
-
-  .mq-mobile-newsletter > span {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 50%;
-  }
-
-  .mq-mobile-newsletter > span svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .mq-mobile-newsletter h2 {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-  }
-
-  .mq-mobile-newsletter > div p {
-    margin-top: 3px;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 8px;
-    line-height: 1.4;
-  }
-
-  .mq-mobile-newsletter form {
-    min-width: 0;
-    min-height: 42px;
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .mq-mobile-newsletter input {
-    min-width: 0;
-    padding: 0 11px;
-    color: var(--mq-text);
-    background: #fff;
-    border: 0;
-    border-radius: 7px 0 0 7px;
-    font-size: 9px;
-    outline: none;
-  }
-
-  .mq-mobile-newsletter button {
-    min-width: 86px;
-    padding: 0 10px;
-    color: #fff;
-    background: var(--mq-terracotta);
-    border: 0;
-    border-radius: 0 7px 7px 0;
-    font-size: 9px;
-    font-weight: 600;
   }
 
   .mq-mobile button:focus-visible,

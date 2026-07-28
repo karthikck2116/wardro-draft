@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { finishSamples } from "@/data/materials-quality";
 import { MobileMaterialsFaq } from "./mobile-materials-faq";
-import { MobileMaterialsNewsletter } from "./mobile-materials-newsletter";
 
 const pillars = [
   {
@@ -225,8 +224,6 @@ export function MobileMaterialsQualityPage() {
       <MobileQualityProofStrip />
       <MobileMaterialsFaq />
       <MobileMaterialsCta />
-      <MobileMaterialsNewsletter />
     </div>
   );
 }
-
